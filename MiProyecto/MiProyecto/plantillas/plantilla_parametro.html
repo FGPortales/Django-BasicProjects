@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla que recibe parámetros</title>
+    <style type="text/css">
+        li {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola, mi nombre es: {{nombre}} y la fecha de hoy es:<br/>
+        d&iacute;a: {{date.day}}<br/>mes:{{date.month}}<br/>a&ntilde;o:{{date.year}}</h1>
+    <ul>
+    <h2>Programming Languages</h2>
+        {# Este es un comentario #}
+    <h3>N&uacute;mero de lenguajes: {{languages|length}}</h3>
+    {% for lan in languages %}
+        {% if lan == 'python' %}
+            <li style="color:red">{{lan}}</li>
+        {% elif lan == 'c++' %}
+            <li style="color:lightgreen">{{lan}}</li>
+        {% else %}
+            <li>{{lan|first|upper}} : {{lan|upper}} / Tama&ntilde;o: {{lan|length}}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% comment %}
+        Este es un comentario
+        de más de una línea.
+        Confirmado.
+    {% endcomment %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% include 'superior/barra.html' %}
+
+    <h2 style="color: red">
+        Hola alumnos estamos viendo nuestra primera plantilla
+    </h2>
+<!--    {# Esto es un comentario #}-->
+    {% if persona.nombre == 'Profesor Freddy' %}
+        <p>El curso lo imparte el profesor titular</p>
+        {% else %}
+        <p>El curso lo imparte otra persona</p>
+    {% endif %}
+
+    <p>
+        El nombre del profesor es {{nombre_persona.upper}} {{apellido_persona.upper}}
+    </p>
+    <p>
+        Hoy es : {{momento_actual.day}}-{{momento_actual.month}}-{{momento_actual.year}}
+    </p>
+    <p>
+        Aplicando Objetos: {{persona.nombre}} {{persona.apellido}}
+    </p>
+    <p><strong>Temas del Curso</strong></p>
+    <ul>
+        {% if temas %}
+            {% for tema in temas %}
+            <li>{{tema}}</li>
+            {% endfor %}
+        {% else %}
+            <p>No hay elementos que mostrar</p>
+        {% endif %}
+    </ul>
+</body>
+</html>

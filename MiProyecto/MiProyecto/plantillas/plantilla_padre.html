@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>{% block title %} {% endblock %}</title>
+      <link type="text/css" href="{% static 'css/plantilla_barra_navegacion.css' %}" rel="stylesheet"/>
+  </head>
+    <body>
+        {% include 'plantilla_barra_navegacion.html' %}
+        <h1 style="color: blue">FreddyGPA</h1>
+        <img src="{% static 'images/perrito.jpg' %}" style="width: 10%; height: auto;"/>
+        </br>
+        {% block content %}
+
+        {% endblock %}
+        <p>Este es el pie de página</p>
+        <script type="text/javascript" src="{% static 'js/plantilla_padre.js' %}"></script>
+  </body>
+</html>

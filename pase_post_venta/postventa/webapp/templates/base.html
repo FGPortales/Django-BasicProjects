@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <style>
+        table, th, td, tr{
+        border: 1px solid black;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sistema de Gestión de Clientes</title>
+        <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/navbar-top.css' %}" rel="stylesheet"/>
+<!--        <link href="{% static 'css/bienvenido.css' %}" rel="stylesheet"/>-->
+        <script src="{% static 'node_modules/@fortawesome/fontawesome-free/js/all.min.js' %}"></script>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="d-flex justify-content-center" style="margin-top:5%; align-center; ">
+            <img src="{% static 'img/img.jpg' %}" style="center">
+        </div>
+        <div class="d-flex justify-content-center" style="margin-top:5%; align-center">
+            <h1>Bienvenido al Sistema de Gestión de Plataformas</h1>
+        </div>
+
+        <main role="main" class="container mt-5">
+            <div class="starter-template">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+        <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
+        <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

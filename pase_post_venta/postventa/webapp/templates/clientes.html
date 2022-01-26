@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'css/bienvenido.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <h2>Número de Clientes: {{num_cli}}</h2>
+    <div class="mt-md-4">
+        <button type="button" class="btn btn-success"><a class="text-white" href="nuevo_cliente" style="">Agregar Cliente</a></button>
+    </div>
+    <div class="mt-md-4">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>SERVICIO</th>
+                    <th>LINK</th>
+                    <th>IP CLIENTE</th>
+                    <th>USER</th>
+                    <th>PASSWORD</th>
+<!--                    <th>PUERTO</th>-->
+<!--                    <th>SECTOR</th>-->
+<!--                    <th>CI</th>-->
+                    <th colspan="3">ACCIÓN</th>
+                </tr>
+            </thead>
+            {% for cliente in my_clients %}
+            <tbody>
+                <tr>
+                    <td class="continue">{{cliente.id}}</td>
+                    <td class="continue">{{cliente.nombre}}</td>
+                    <td class="continue">{{cliente.servicio}}</td>
+                    <td class="continue">{{cliente.link}}</td>
+                    <td class="continue">{{cliente.ip_cliente}}</td>
+                    <td class="continue">{{cliente.user}}</td>
+                    <td class="continue">{{cliente.password}}</td>
+<!--                    <td class="continue">{{cliente.puerto}}</td>-->
+<!--                    <td class="continue">{{cliente.sector}}</td>-->
+<!--                    <td class="continue">{{cliente.ci}}</td>-->
+                    <td><button type="button" class="btn btn-primary"><a href="detalle_cli/{{cliente.id}}"><i class="fas fa-eye white"/></a></button></td>
+                    <td><button type="button" class="btn btn-success"><a href="editar_cli/{{cliente.id}}"><i class="fas fa-edit white"/></a></button></td>
+                    <td><button type="button" class="btn btn-danger"><a href="eliminar_cli/{{cliente.id}}"><i class="fas fa-trash-alt white"/></a></button></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

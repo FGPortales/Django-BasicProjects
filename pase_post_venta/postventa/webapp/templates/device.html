@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'css/bienvenido.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <h2>Número de Equipos: {{num_devices}}</h2>
+    <div class="mt-md-4">
+        <button type="button" class="btn btn-success"><a class="text-white" href="nuevo_equipo" style="">Agregar Equipo</a></button>
+    </div>
+    <div class="mt-md-4">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>MODELO</th>
+                    <th>VERSION</th>
+                    <th>MARCA</th>
+                    <th>LICENCIA</th>
+                    <th>A. LAN</th>
+                    <th>A. WAN</th>
+                    <th>USER</th>
+                    <th>PASSWORD</th>
+                    <th>SERIE</th>
+                    <th>PUERTO SSH</th>
+                    <th>ACCESO</th>
+                </tr>
+            </thead>
+            {% for device in devices %}
+            <tbody>
+                <tr>
+                    <td class="continue">{{device.id}}</td>
+                    <td class="continue">{{device.nombre}}</td>
+                    <td class="continue">{{device.modelo}}</td>
+                    <td class="continue">{{device.version}}</td>
+                    <td class="continue">{{device.marca_id}}</td>
+
+                    <td class="continue">{{device.licencia_equipo}}</td>
+                    <td class="continue">{{device.acceso_lan}}</td>
+                    <td class="continue">{{device.acceso_wan}}</td>
+                    <td class="continue">{{device.user}}</td>
+                    <td class="continue">{{device.password}}</td>
+                    <td class="continue">{{device.serie}}</td>
+                    <td class="continue">{{device.puerto_ssh}}</td>
+                    <td class="continue">{{device.acceso_id}}</td>
+<!--                    <td><button type="button" class="btn btn-primary"><a href="detalle_cli/{{cliente.id}}"><i class="fas fa-eye white"/></a></button></td>-->
+<!--                    <td><button type="button" class="btn btn-success"><a href="editar_cli/{{cliente.id}}"><i class="fas fa-edit white"/></a></button></td>-->
+<!--                    <td><button type="button" class="btn btn-danger"><a href="eliminar_cli/{{cliente.id}}"><i class="fas fa-trash-alt white"/></a></button></td>-->
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

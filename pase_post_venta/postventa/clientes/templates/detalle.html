@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <h1>Detalle Cliente</h1>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <td>{{cliente_dic.id}}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{cliente_dic.nombre}}</td>
+        </tr>
+        <tr>
+            <th>Servicio</th>
+            <td>{{cliente_dic.servicio}}</td>
+        </tr>
+        <tr>
+            <th>Link</th>
+            <td>{{cliente_dic.link}}</td>
+        </tr>
+        <tr>
+            <th>Ip cliente</th>
+            <td>{{cliente_dic.ip_cliente}}</td>
+        </tr>
+        <tr>
+            <th>User</th>
+            <td>{{cliente_dic.user}}</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>{{cliente_dic.password}}</td>
+        </tr>
+        <tr>
+            <th>Puerto</th>
+            <td>{{cliente_dic.puerto}}</td>
+        </tr>
+        <tr>
+            <th>Sector</th>
+            <td>{{cliente_dic.sector}}</td>
+        </tr>
+        <tr>
+            <th>CI</th>
+            <td>{{cliente_dic.ci}}</td>
+        </tr>
+    </table>
+    <a href="{% url 'inicio' %}">Regresar al inicio</a>
+</body>
+{% endblock %}

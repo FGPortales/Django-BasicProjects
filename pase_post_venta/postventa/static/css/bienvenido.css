@@ -1,0 +1,23 @@
+.white{
+   color:white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/**.continue{
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}**/
+
+/**h1{
+    font-size: 20px;
+}**/

@@ -1,0 +1,11 @@
+#mi_barra{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-transform: uppercase;
+}
+#mi_barra li{
+    display: inline;
+    margin: 0 30px;
+    color: brown;
+}
